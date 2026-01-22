@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    volumes:
+      - ./storage/uploads:/app/storage/uploads
+    env_file:
+      - .env
+    restart: unless-stopped

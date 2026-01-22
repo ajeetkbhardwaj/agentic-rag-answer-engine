@@ -1,0 +1,66 @@
+# LLM Configuration
+llm:
+  provider: gemini  # Options: gemini, openrouter, ollama
+  model: gemini-1.5-pro
+  temperature: 0.7
+  max_tokens: 2048
+  top_p: 0.95
+
+# Vector Database Configuration
+vector_db:
+  type: qdrant  # Options: qdrant, pinecone
+  qdrant:
+    path: ./storage/qdrant_storage
+    collection_name: documents
+  pinecone:
+    api_key: ${PINECONE_API_KEY}
+    index_name: ai-system
+    dimension: 1536
+
+# Document Processing
+ingestion:
+  chunk_size: 1024
+  chunk_overlap: 200
+  supported_formats:
+    - pdf
+    - docx
+    - txt
+    - csv
+    - pptx
+  max_file_size_mb: 100
+
+# Retrieval Configuration
+retrieval:
+  top_k: 5
+  similarity_threshold: 0.5
+  rerank: true
+
+# Web Search Configuration
+web_search:
+  provider: tavily  # Options: tavily, serpapi, bing
+  tavily:
+    api_key: ${TAVILY_API_KEY}
+  results_count: 5
+
+# Agent Configuration
+agents:
+  router:
+    verbose: true
+  doc_rag:
+    verbose: true
+  web_search:
+    verbose: true
+  fusion:
+    verbose: true
+  answer:
+    verbose: true
+
+# Application Settings
+app:
+  name: AI Answering System
+  version: 1.0.0
+  debug: false
+  port: 8000
+  workers: 4
+  upload_dir: ./storage/uploads
+  log_level: INFO
