@@ -1,9 +1,13 @@
 %s
+
 # AI Answering System (Agentic RAG)
+
+Remark : Please note that this project is build with the help of GPT-5 mini via Github Copilot via testing my AI System designing Ideas...
 
 This repository implements a production-style Retrieval-Augmented Generation (RAG) system with agentic orchestration. It supports user-uploaded documents, live web search, evidence fusion, and citation-backed answers. The implementation is modular and LLM-provider agnostic.
 
 Quick contents
+
 - `ingestion/` - document loaders, chunking, LlamaIndex integration
 - `agents/` - router, doc_rag, web search, fusion, answer generator
 - `llm/` - LLM abstraction and provider implementations
@@ -55,5 +59,6 @@ Notes & Next Steps
 - Consider adding tests and CI for reproducibility.
 
 References
+
 - LlamaIndex, LangChain, LangGraph, CrewAI
 - See `config/config.yaml` for default system settings
